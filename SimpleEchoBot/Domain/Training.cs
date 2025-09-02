@@ -4,7 +4,7 @@ namespace SimpleBot.Domain;
 
 public record Training(
     Guid Id,
-    string Text,
+    string Utterance,
     string Culture,
     string Tag
 );

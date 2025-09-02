@@ -36,8 +36,8 @@ public class IntentClassifier {
     public void Train(IEnumerable<Training> training) {
         foreach (var item in training) {
             if (_trainingTexts.TryGetValue(item.Tag, out var texts)) {
-                texts.Add(item.Text);
-                var words = Tokenize(item.Text);
+                texts.Add(item.Utterance);
+                var words = Tokenize(item.Utterance);
                 foreach (var word in words) {
                     if (!_wordFrequencies[item.Tag].TryGetValue(word, out var count)) {
                         count = 0;

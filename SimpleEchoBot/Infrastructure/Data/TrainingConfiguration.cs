@@ -10,7 +10,7 @@ internal class TrainingConfiguration
     public void Configure(EntityTypeBuilder<Training> builder) {
         builder.ToTable("Training");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Text)
+        builder.Property(x => x.Utterance)
             .IsRequired(true);
         builder.Property(x => x.Culture)
             .HasMaxLength(10)
