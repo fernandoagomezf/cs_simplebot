@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
-using SimpleBot.Dialogs;
+using SimpleBot.Application.Bots.Dialogs;
 
-namespace SimpleBot.Bots;
+namespace SimpleBot.Application.Bots;
 
 public class EchoBot
     : ActivityHandler {
@@ -35,9 +35,6 @@ public class EchoBot
         }
 
         await _conversationState.SaveChangesAsync(turnContext, false, cancellationToken);
-
-
-        //await _dialog.RunAsync(turnContext, _conversationState.CreateProperty<DialogState>(nameof(DialogState)), cancellationToken);
     }
 
     protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken) {

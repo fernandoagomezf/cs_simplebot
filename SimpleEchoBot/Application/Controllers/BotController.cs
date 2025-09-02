@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
 
-namespace SimpleBot.Controllers;
+namespace SimpleBot.Application.Controllers;
 
 
 [Route("api/messages")]

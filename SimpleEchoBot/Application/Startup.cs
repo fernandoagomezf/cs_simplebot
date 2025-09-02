@@ -7,10 +7,15 @@ using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SimpleBot.Adapters;
-using SimpleBot.Services;
+using SimpleBot.Infrastructure.Data;
+using SimpleBot.Infrastructure.Repositories;
+using SimpleBot.Infrastructure.Services;
+using SimpleBot.Application.Bots;
+using SimpleBot.Application.Bots.Adapters;
+using SimpleBot.Application.Bots.Dialogs;
+using Microsoft.EntityFrameworkCore;
 
-namespace SimpleBot;
+namespace SimpleBot.Application;
 
 public class Startup {
     public Startup(IConfiguration configuration) {
@@ -25,13 +30,16 @@ public class Startup {
             options.SerializerSettings.MaxDepth = HttpHelper.BotMessageSerializerSettings.MaxDepth;
         });
 
-        services.AddSingleton<RuleBasedClassifier>();
+
+        services.AddDbContext<BotContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("BotContext"))
+        );
 
         services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>();
         services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
-
+        services.AddScoped<IIntentRepository, IntentRepository>();
+        services.AddScoped<ITextAnalyzer, NaiveBayesAnalyzer>();
         services.AddSingleton<IStorage, MemoryStorage>();
-
         services.AddSingleton<ConversationState>(sp => {
             var storage = sp.GetRequiredService<IStorage>();
             return new ConversationState(storage);
@@ -42,12 +50,9 @@ public class Startup {
             return new UserState(storage);
         });
 
-
-        services.AddSingleton<Dialogs.SupportDialog>();
-
-        services.AddTransient<IBot, Bots.EchoBot>();
-
-
+        services.AddMemoryCache();
+        services.AddSingleton<SupportDialog>();
+        services.AddTransient<IBot, EchoBot>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {

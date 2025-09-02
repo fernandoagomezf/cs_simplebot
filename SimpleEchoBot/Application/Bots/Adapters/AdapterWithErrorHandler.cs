@@ -1,20 +1,15 @@
 ﻿
 using System;
-using System.Security.Claims;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.Bot.Builder.TraceExtensions;
 using Microsoft.Bot.Connector.Authentication;
-using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
 
-namespace SimpleBot.Adapters;
+namespace SimpleBot.Application.Bots.Adapters;
 
 public class AdapterWithErrorHandler
     : CloudAdapter {
-    public AdapterWithErrorHandler(BotFrameworkAuthentication auth, ILogger<CloudAdapter> logger, ConversationState conversationState = null)
+    public AdapterWithErrorHandler(BotFrameworkAuthentication auth, ILogger<CloudAdapter> logger, ConversationState? conversationState = null)
            : base(auth, logger) {
         OnTurnError = async (turnContext, exception) => {
             // Log any leaked exception from the application
@@ -28,8 +23,7 @@ public class AdapterWithErrorHandler
             if (conversationState != null) {
                 try {
                     await conversationState.DeleteAsync(turnContext);
-                }
-                catch (Exception ex) {
+                } catch (Exception ex) {
                     logger.LogError(ex, $"Exception caught on attempting to Delete ConversationState : {ex.Message}");
                 }
             }
