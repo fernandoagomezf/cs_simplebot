@@ -42,8 +42,8 @@ public sealed class IntentRepository
             .OrderBy(x => x.Code)
             .ToListAsync();
 
-    public async Task<IEnumerable<Training>> GetTrainingAsync()
-        => await Context.Set<Training>()
+    public async Task<IEnumerable<Utterance>> GetUtterancesAsync()
+        => await Context.Set<Utterance>()
             .Where(x => x.Culture == _culture)
             .OrderBy(x => x.Tag)
             .ToListAsync();

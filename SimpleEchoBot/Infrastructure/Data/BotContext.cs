@@ -12,7 +12,7 @@ public class BotContext
     }
 
     public DbSet<Intent> Intents => Set<Intent>();
-    public DbSet<Training> Trainings => Set<Training>();
+    public DbSet<Utterance> Utterances => Set<Utterance>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);

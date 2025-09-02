@@ -33,11 +33,11 @@ public class IntentClassifier {
             .Distinct();
     }
 
-    public void Train(IEnumerable<Training> training) {
+    public void Train(IEnumerable<Utterance> training) {
         foreach (var item in training) {
             if (_trainingTexts.TryGetValue(item.Tag, out var texts)) {
-                texts.Add(item.Utterance);
-                var words = Tokenize(item.Utterance);
+                texts.Add(item.Text);
+                var words = Tokenize(item.Text);
                 foreach (var word in words) {
                     if (!_wordFrequencies[item.Tag].TryGetValue(word, out var count)) {
                         count = 0;
@@ -54,8 +54,10 @@ public class IntentClassifier {
         var scores = new Dictionary<string, double>();
 
         foreach (var intentCode in _intents.Keys) {
-            var intentProbability = Math.Log((double)_trainingTexts[intentCode].Count /
-                                           _trainingTexts.Values.Sum(t => t.Count));
+            var intentCodeCount = (double)_trainingTexts[intentCode].Count;
+            var trainingTextSum = (double)_trainingTexts.Values.Sum(t => t.Count);
+            var ratio = intentCodeCount / trainingTextSum;
+            var intentProbability = Math.Log(ratio);
 
             var wordProbability = 0.0;
             foreach (var word in words) {

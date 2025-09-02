@@ -2,9 +2,9 @@ using System;
 
 namespace SimpleBot.Domain;
 
-public record Training(
+public record Utterance(
     Guid Id,
-    string Utterance,
+    string Text,
     string Culture,
     string Tag
 );

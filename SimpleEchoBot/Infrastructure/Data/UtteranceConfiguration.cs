@@ -6,11 +6,11 @@ using SimpleBot.Domain;
 namespace SimpleBot.Infrastructure.Data;
 
 internal class TrainingConfiguration
-    : IEntityTypeConfiguration<Training> {
-    public void Configure(EntityTypeBuilder<Training> builder) {
-        builder.ToTable("Training");
+    : IEntityTypeConfiguration<Utterance> {
+    public void Configure(EntityTypeBuilder<Utterance> builder) {
+        builder.ToTable("Utterances");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Utterance)
+        builder.Property(x => x.Text)
             .IsRequired(true);
         builder.Property(x => x.Culture)
             .HasMaxLength(10)

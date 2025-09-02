@@ -40,7 +40,7 @@ public class EchoBot
     protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken) {
         foreach (var member in membersAdded) {
             if (member.Id != turnContext.Activity.Recipient.Id) {
-                await turnContext.SendActivityAsync(MessageFactory.Text($"Hello and welcome! How can I help you today?"), cancellationToken);
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Bienvenido al BlendBot empresarial, v0.1"), cancellationToken);
 
                 var dialogSet = new DialogSet(_conversationState.CreateProperty<DialogState>("DialogState"));
                 dialogSet.Add(_dialog);

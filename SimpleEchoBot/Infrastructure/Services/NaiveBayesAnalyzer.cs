@@ -42,10 +42,10 @@ public class NaiveBayesAnalyzer
     private async Task<IntentClassifier> CreateClassifierAsync(string culture) {
         _repository.UseCulture(culture);
         var intents = await _repository.GetIntentsAsync();
-        var trainingData = await _repository.GetTrainingAsync();
+        var utterances = await _repository.GetUtterancesAsync();
 
         var classifier = new IntentClassifier(intents);
-        classifier.Train(trainingData);
+        classifier.Train(utterances);
 
         return classifier;
     }
