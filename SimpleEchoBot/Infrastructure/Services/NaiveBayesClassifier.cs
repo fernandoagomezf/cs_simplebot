@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using SimpleBot.Infrastructure.Repositories;
 using SimpleBot.Infrastructure.Services;
 
-public class NaiveBayesAnalyzer
-    : ITextAnalyzer {
+public class NaiveBayesClassifier
+    : ITextClassifier {
     private readonly IIntentRepository _repository;
     private readonly Dictionary<string, IntentClassifier> _classifiers;
     private CultureInfo _culture;
 
-    public NaiveBayesAnalyzer(IIntentRepository repository) {
+    public NaiveBayesClassifier(IIntentRepository repository) {
         _repository = repository;
         _culture = Thread.CurrentThread.CurrentCulture;
         _classifiers = new();
@@ -23,7 +23,7 @@ public class NaiveBayesAnalyzer
         set => _culture = value;
     }
 
-    public async Task<AnalysisResult> AnalyzeAsync(string text) {
+    public async Task<ClassificationResult> AnalyzeAsync(string text) {
         if (String.IsNullOrEmpty(text)) {
             throw new ArgumentException("The text to analyze cannot be empty.");
         }

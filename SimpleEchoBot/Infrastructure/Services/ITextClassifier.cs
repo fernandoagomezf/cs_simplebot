@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace SimpleBot.Infrastructure.Services;
 
-public interface ITextAnalyzer {
+public interface ITextClassifier {
     CultureInfo Culture { get; set; }
-    Task<AnalysisResult> AnalyzeAsync(string text);
+    Task<ClassificationResult> AnalyzeAsync(string text);
 }

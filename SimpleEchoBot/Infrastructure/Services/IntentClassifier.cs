@@ -49,7 +49,7 @@ public class IntentClassifier {
         }
     }
 
-    public IEnumerable<ClassificationResult> Classify(string text) {
+    public IEnumerable<IntentResult> Classify(string text) {
         var words = Tokenize(text);
         var scores = new Dictionary<string, double>();
 
@@ -82,7 +82,7 @@ public class IntentClassifier {
         var sumExpScores = expScores.Values.Sum();
 
         return expScores
-            .Select(kvp => new ClassificationResult(
+            .Select(kvp => new IntentResult(
                 IntentId: _intents[kvp.Key].Id,
                 IntentCode: kvp.Key,
                 IntentName: _intents[kvp.Key].Name,

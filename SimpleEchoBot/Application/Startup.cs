@@ -38,7 +38,7 @@ public class Startup {
         services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>();
         services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
         services.AddScoped<IIntentRepository, IntentRepository>();
-        services.AddScoped<ITextAnalyzer, NaiveBayesAnalyzer>();
+        services.AddScoped<ITextClassifier, NaiveBayesClassifier>();
         services.AddSingleton<IStorage, MemoryStorage>();
         services.AddSingleton<ConversationState>(sp => {
             var storage = sp.GetRequiredService<IStorage>();

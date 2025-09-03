@@ -55,7 +55,7 @@ public class SupportDialog
         using var scope = _services.CreateScope();
 
         var utterance = (string)stepContext.Result;
-        var service = scope.ServiceProvider.GetRequiredService<ITextAnalyzer>();
+        var service = scope.ServiceProvider.GetRequiredService<ITextClassifier>();
         service.Culture = DetectCulture(utterance);
         var result = await service.AnalyzeAsync(utterance);
 
@@ -65,21 +65,19 @@ public class SupportDialog
     }
 
     private async Task<DialogTurnResult> HandleConfidenceStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken) {
-        var analysisResult = (AnalysisResult)stepContext.Result;
+        var analysisResult = (ClassificationResult)stepContext.Result;
 
         if (analysisResult.BestMatch.Confidence > 0.7) {
-            // High confidence - skip to final step
             return await stepContext.NextAsync("high_confidence", cancellationToken);
         } else {
-            // Low confidence - show options to user
-            var topIntents = analysisResult.Classifications.Take(5).ToList();
+            var topIntents = analysisResult.Intents.Take(5).ToList();
             stepContext.Values["topIntents"] = topIntents;
 
             var message = "I'm not completely sure about your request. Which category best describes it?\n\n";
             for (int i = 0; i < topIntents.Count; i++) {
                 message += $"{i + 1}. {topIntents[i].IntentName}\n";
             }
-            message += "\nPlease select a number (1-5) or type 'none' if none match.";
+            message += "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
 
             return await stepContext.PromptAsync(nameof(TextPrompt),
                 new PromptOptions { Prompt = MessageFactory.Text(message) }, cancellationToken);
@@ -87,30 +85,23 @@ public class SupportDialog
     }
     private async Task<DialogTurnResult> ProcessUserSelectionStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken) {
         var userResponse = (string)stepContext.Result;
-        var topIntents = (List<ClassificationResult>)stepContext.Values["topIntents"];
-        var originalAnalysis = (AnalysisResult)stepContext.Values["analysisResult"];
+        var topIntents = (List<IntentResult>)stepContext.Values["topIntents"];
+        var originalAnalysis = (ClassificationResult)stepContext.Values["analysisResult"];
 
         if (int.TryParse(userResponse, out int selection) && selection >= 1 && selection <= topIntents.Count) {
-            // User selected one of the options
             var selectedIntent = topIntents[selection - 1];
 
-            // Save to database for training
-            /*
-            await _trainingService.SaveUtteranceAsync(
-                originalAnalysis.OriginalText,
-                selectedIntent.Intent
-            );
-            */
+            // TODO: guardar en base de datos
 
             stepContext.Values["confirmedIntent"] = selectedIntent;
             return await stepContext.NextAsync("user_selected", cancellationToken);
         } else if (userResponse.ToLower() == "none") {
-            // Handle case where none match
+            // TODO: hacer algo si no se encuentra nada.
             stepContext.Values["confirmedIntent"] = null;
             return await stepContext.NextAsync("no_match", cancellationToken);
         } else {
             // Invalid input, reprompt
-            var message = "Please select a valid option (1-5) or type 'none':";
+            var message = "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
             return await stepContext.PromptAsync(nameof(TextPrompt),
                 new PromptOptions { Prompt = MessageFactory.Text(message) }, cancellationToken);
         }
@@ -121,22 +112,22 @@ public class SupportDialog
 
         switch (outcome) {
             case "high_confidence":
-                var analysisResult = (AnalysisResult)stepContext.Values["analysisResult"];
+                var analysisResult = (ClassificationResult)stepContext.Values["analysisResult"];
                 await stepContext.Context.SendActivityAsync(
-                    $"I understand you're asking about {analysisResult.BestMatch.IntentName}. Let me help you with that!",
+                    $"Entiendo que la acción que quieres realizar es **{analysisResult.BestMatch.IntentName}** (confidencia: {analysisResult.BestMatch.Confidence}).",
                     cancellationToken: cancellationToken);
                 break;
 
             case "user_selected":
-                var selectedIntent = (ClassificationResult)stepContext.Values["confirmedIntent"];
+                var selectedIntent = (IntentResult)stepContext.Values["confirmedIntent"];
                 await stepContext.Context.SendActivityAsync(
-                    $"Thank you for clarifying! I'll help you with {selectedIntent.IntentName}.",
+                    $"¡Gracias por clarificar! Ahora entiendo que la acción es **{selectedIntent.IntentName}**.",
                     cancellationToken: cancellationToken);
                 break;
 
             case "no_match":
                 await stepContext.Context.SendActivityAsync(
-                    "I'll make sure to learn from this. Please try rephrasing your question.",
+                    "Lo siento, intentaré aprender de esto. Por favor, refrasea tu pregunta e intenta de nuevo.",
                     cancellationToken: cancellationToken);
                 break;
         }

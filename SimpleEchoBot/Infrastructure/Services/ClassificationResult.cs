@@ -1,14 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SimpleBot.Infrastructure.Services;
 
 public record ClassificationResult(
-    Guid IntentId,
-    string IntentCode,
-    string IntentName,
-    double Confidence
+    string InputText,
+    string Culture,
+    IEnumerable<IntentResult> Intents,
+    DateTime Started,
+    DateTime Concluded
 ) {
-    public const double Threshold = 0.7;
-    public bool IsConfident => Confidence >= Threshold;
-    public string ConfidenceText => $"{Confidence:P1}";
+    public bool HasIntents => Intents.Count() > 0;
+    public IntentResult BestMatch => Intents.First();
 }
