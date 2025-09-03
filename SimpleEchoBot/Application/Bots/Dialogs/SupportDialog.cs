@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Schema.SharePoint;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleBot.Infrastructure.Services;
 
@@ -68,14 +69,16 @@ public class SupportDialog
         var analysisResult = (ClassificationResult)stepContext.Result;
 
         if (analysisResult.BestMatch.Confidence > 0.7) {
+            stepContext.Values["askClarifiction"] = false;
             return await stepContext.NextAsync("high_confidence", cancellationToken);
         } else {
+            stepContext.Values["askClarifiction"] = true;
             var topIntents = analysisResult.Intents.Take(5).ToList();
             stepContext.Values["topIntents"] = topIntents;
 
-            var message = "I'm not completely sure about your request. Which category best describes it?\n\n";
+            var message = "No estoy completamente seguro de entender tu solicitud. ¿Cuál de estas opciones lo describe mejor?\n\n";
             for (int i = 0; i < topIntents.Count; i++) {
-                message += $"{i + 1}. {topIntents[i].IntentName}\n";
+                message += $"{i + 1}. {topIntents[i].IntentName} (confidencia: {topIntents[i].ConfidenceText})\n";
             }
             message += "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
 
@@ -84,26 +87,31 @@ public class SupportDialog
         }
     }
     private async Task<DialogTurnResult> ProcessUserSelectionStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken) {
-        var userResponse = (string)stepContext.Result;
-        var topIntents = (List<IntentResult>)stepContext.Values["topIntents"];
-        var originalAnalysis = (ClassificationResult)stepContext.Values["analysisResult"];
+        var clarificationNeeded = (bool)stepContext.Values["askClarifiction"];
+        if (clarificationNeeded) {
+            var userResponse = (string)stepContext.Result;
+            var topIntents = (List<IntentResult>)stepContext.Values["topIntents"];
+            var originalAnalysis = (ClassificationResult)stepContext.Values["analysisResult"];
 
-        if (int.TryParse(userResponse, out int selection) && selection >= 1 && selection <= topIntents.Count) {
-            var selectedIntent = topIntents[selection - 1];
+            if (int.TryParse(userResponse, out int selection) && selection >= 1 && selection <= topIntents.Count) {
+                var selectedIntent = topIntents[selection - 1];
 
-            // TODO: guardar en base de datos
+                // TODO: guardar en base de datos
 
-            stepContext.Values["confirmedIntent"] = selectedIntent;
-            return await stepContext.NextAsync("user_selected", cancellationToken);
-        } else if (userResponse.ToLower() == "none") {
-            // TODO: hacer algo si no se encuentra nada.
-            stepContext.Values["confirmedIntent"] = null;
-            return await stepContext.NextAsync("no_match", cancellationToken);
+                stepContext.Values["confirmedIntent"] = selectedIntent;
+                return await stepContext.NextAsync("user_selected", cancellationToken);
+            } else if (userResponse.ToLower() == "no" || userResponse.ToLower() == "ninguno" || userResponse.ToLower() == "ninguna" || userResponse.ToLower() == "nada") {
+                // TODO: hacer algo si no se encuentra nada.
+                stepContext.Values["confirmedIntent"] = null;
+                return await stepContext.NextAsync("no_match", cancellationToken);
+            } else {
+                // Invalid input, reprompt
+                var message = "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
+                return await stepContext.PromptAsync(nameof(TextPrompt),
+                    new PromptOptions { Prompt = MessageFactory.Text(message) }, cancellationToken);
+            }
         } else {
-            // Invalid input, reprompt
-            var message = "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
-            return await stepContext.PromptAsync(nameof(TextPrompt),
-                new PromptOptions { Prompt = MessageFactory.Text(message) }, cancellationToken);
+            return await stepContext.NextAsync(stepContext.Result, cancellationToken);
         }
     }
 
@@ -114,7 +122,7 @@ public class SupportDialog
             case "high_confidence":
                 var analysisResult = (ClassificationResult)stepContext.Values["analysisResult"];
                 await stepContext.Context.SendActivityAsync(
-                    $"Entiendo que la acción que quieres realizar es **{analysisResult.BestMatch.IntentName}** (confidencia: {analysisResult.BestMatch.Confidence}).",
+                    $"Entiendo que la acción que quieres realizar es **{analysisResult.BestMatch.IntentName}** (confidencia: {analysisResult.BestMatch.ConfidenceText}).",
                     cancellationToken: cancellationToken);
                 break;
 
