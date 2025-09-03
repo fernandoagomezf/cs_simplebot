@@ -10,11 +10,13 @@ using SimpleBot.Infrastructure.Services;
 public class NaiveBayesClassifier
     : ITextClassifier {
     private readonly IIntentRepository _repository;
+    private readonly ITextPreprocessor _preprocessor;
     private readonly Dictionary<string, IntentClassifier> _classifiers;
     private CultureInfo _culture;
 
-    public NaiveBayesClassifier(IIntentRepository repository) {
+    public NaiveBayesClassifier(IIntentRepository repository, ITextPreprocessor preprocessor) {
         _repository = repository;
+        _preprocessor = preprocessor;
         _culture = Thread.CurrentThread.CurrentCulture;
         _classifiers = new();
     }
@@ -50,7 +52,7 @@ public class NaiveBayesClassifier
         var intents = await _repository.GetIntentsAsync();
         var utterances = await _repository.GetUtterancesAsync();
 
-        var classifier = new IntentClassifier(intents);
+        var classifier = new IntentClassifier(_preprocessor, intents);
         classifier.Train(utterances);
 
         return classifier;

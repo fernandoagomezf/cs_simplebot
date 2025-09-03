@@ -6,12 +6,14 @@ using SimpleBot.Domain;
 namespace SimpleBot.Infrastructure.Services;
 
 public class IntentClassifier {
+    private readonly ITextPreprocessor _preprocessor;
     private readonly Dictionary<string, Intent> _intents;
     private readonly Dictionary<string, List<string>> _trainingTexts = new();
     private readonly Dictionary<string, Dictionary<string, int>> _wordFrequencies = new();
     private readonly Dictionary<string, int> _intentWordCounts = new();
 
-    internal IntentClassifier(IEnumerable<Intent> intents) {
+    internal IntentClassifier(ITextPreprocessor preprocessor, IEnumerable<Intent> intents) {
+        _preprocessor = preprocessor;
         _intents = new();
         _trainingTexts = new();
         _wordFrequencies = new();
@@ -25,19 +27,12 @@ public class IntentClassifier {
         }
     }
 
-    private static IEnumerable<string> Tokenize(string text) {
-        return text.ToLowerInvariant()
-            .Split([' ', '.', ',', '!', '?', ';', ':', '"', '\'', '(', ')', '[', ']', '{', '}'],
-                StringSplitOptions.RemoveEmptyEntries)
-            .Where(word => word.Length > 2) // Ignore very short words
-            .Distinct();
-    }
-
     public void Train(IEnumerable<Utterance> training) {
         foreach (var item in training) {
             if (_trainingTexts.TryGetValue(item.Tag, out var texts)) {
                 texts.Add(item.Text);
-                var words = Tokenize(item.Text);
+                var preprocText = _preprocessor.Preprocess(item.Text);
+                var words = _preprocessor.Tokenize(preprocText);
                 foreach (var word in words) {
                     if (!_wordFrequencies[item.Tag].TryGetValue(word, out var count)) {
                         count = 0;
@@ -50,7 +45,8 @@ public class IntentClassifier {
     }
 
     public IEnumerable<IntentResult> Classify(string text) {
-        var words = Tokenize(text);
+        var preprocText = _preprocessor.Preprocess(text);
+        var words = _preprocessor.Tokenize(preprocText);
         var scores = new Dictionary<string, double>();
 
         foreach (var intentCode in _intents.Keys) {
