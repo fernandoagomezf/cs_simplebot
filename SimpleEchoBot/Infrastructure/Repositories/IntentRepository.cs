@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -58,5 +57,11 @@ public sealed class IntentRepository
         _culture = culture;
 
         return this;
+    }
+
+    public async Task AddUtteranceAsync(Utterance utterance) {
+        Context.Set<Utterance>()
+            .Add(utterance);
+        await Context.SaveChangesAsync();
     }
 }

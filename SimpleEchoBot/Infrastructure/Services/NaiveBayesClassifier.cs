@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using SimpleBot.Domain;
 using SimpleBot.Infrastructure.Repositories;
 using SimpleBot.Infrastructure.Services;
 
@@ -37,6 +38,11 @@ public class NaiveBayesClassifier
         var results = _classifiers[culture].Classify(text);
 
         return new(text, culture, results, start, DateTime.Now);
+    }
+
+    public async Task LearnAsync(string intentCode, string utterance) {
+        var item = new Utterance(Guid.NewGuid(), utterance, Culture.Name, intentCode);
+        await _repository.AddUtteranceAsync(item);
     }
 
     private async Task<IntentClassifier> CreateClassifierAsync(string culture) {

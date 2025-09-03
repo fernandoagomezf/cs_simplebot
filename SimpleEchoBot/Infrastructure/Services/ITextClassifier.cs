@@ -7,4 +7,5 @@ namespace SimpleBot.Infrastructure.Services;
 public interface ITextClassifier {
     CultureInfo Culture { get; set; }
     Task<ClassificationResult> AnalyzeAsync(string text);
+    Task LearnAsync(string intentCode, string utterance);
 }

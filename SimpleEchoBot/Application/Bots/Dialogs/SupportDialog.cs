@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Schema.SharePoint;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleBot.Infrastructure.Services;
 
@@ -56,9 +55,9 @@ public class SupportDialog
         using var scope = _services.CreateScope();
 
         var utterance = (string)stepContext.Result;
-        var service = scope.ServiceProvider.GetRequiredService<ITextClassifier>();
-        service.Culture = DetectCulture(utterance);
-        var result = await service.AnalyzeAsync(utterance);
+        var classifier = scope.ServiceProvider.GetRequiredService<ITextClassifier>();
+        classifier.Culture = DetectCulture(utterance);
+        var result = await classifier.AnalyzeAsync(utterance);
 
         stepContext.Values["analysisResult"] = result;
 
@@ -96,7 +95,10 @@ public class SupportDialog
             if (int.TryParse(userResponse, out int selection) && selection >= 1 && selection <= topIntents.Count) {
                 var selectedIntent = topIntents[selection - 1];
 
-                // TODO: guardar en base de datos
+                using var scope = _services.CreateScope();
+                var classifier = scope.ServiceProvider.GetRequiredService<ITextClassifier>();
+                classifier.Culture = DetectCulture(originalAnalysis.InputText);
+                await classifier.LearnAsync(selectedIntent.IntentCode, originalAnalysis.InputText);
 
                 stepContext.Values["confirmedIntent"] = selectedIntent;
                 return await stepContext.NextAsync("user_selected", cancellationToken);
@@ -105,7 +107,6 @@ public class SupportDialog
                 stepContext.Values["confirmedIntent"] = null;
                 return await stepContext.NextAsync("no_match", cancellationToken);
             } else {
-                // Invalid input, reprompt
                 var message = "\nPor favor, selecciona una opción (No. 1-5) o escribe 'ninguna' si no concuerda.";
                 return await stepContext.PromptAsync(nameof(TextPrompt),
                     new PromptOptions { Prompt = MessageFactory.Text(message) }, cancellationToken);

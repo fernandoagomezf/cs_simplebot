@@ -13,4 +13,5 @@ public interface IIntentRepository {
     Task<Intent> GetByIdAsync(Guid id);
     Task<IEnumerable<Intent>> GetByCodeAsync(string code);
     Task<IEnumerable<Utterance>> GetUtterancesAsync();
+    Task AddUtteranceAsync(Utterance utterance);
 }
