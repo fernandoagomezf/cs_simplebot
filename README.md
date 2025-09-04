@@ -13,7 +13,7 @@ La aplicación, al ser ejecutada, permite interactuar con un servicio web en la 
 
 Alternativamente, se puede utilizar el Bot Framework Emulator para interactuar en formato de conversación.
 
-![Img-1](blob/main/docs/bot_confident.png)
+![Img-1](/docs/bot_confident.png)
 
 Una vez conectado al emulador, el bot responderá con un mensaje genérico de bienvenida, tras lo cual, le solicitará al usuario que ingrese una acción a realizar. El usuario podrá escribir un texto solicitando algo, tras lo cual el bot responderá con alguna de dos opciones: 
 
@@ -22,7 +22,7 @@ Una vez conectado al emulador, el bot responderá con un mensaje genérico de bi
     - Si el usuario ingresa un número del 1 al 5, el bot agradece e internamente guarda el texto relacionado con la intención seleccionada por el usuario, para "aprender" a reconocerla en futuras interacciones. 
     - Si el usuario ingresa "ninguna", el bot se disculpa y concluye la conversación. 
 
-![Img-2](blob/main/docs/bot_nonconfident.png)
+![Img-2](/docs/bot_nonconfident.png)
 
 El bot utiliza un catálogo de intenciones, el cual se almacena en una base de datos, y el cual puede ser definido y extendido modificando el contenido de esta tabla. Asimismo, se utiliza una tabla de declaraciones (_utterance_) en donde hay ejemplos de texto relacionado con intenciones, y que se usa para entrenar al bot. 
 
@@ -34,7 +34,7 @@ La aplicación utiliza la estructura general provista por el Microsoft Bot Frame
 * Un bot registrado en Azure, que se encarga de gestionar el diálogo y mantener el estado entre interacciones. 
 * Un diálogo, el cual se encarga de elegir las conversaciones en modo cascada (es decir, una tras otra de forma secuencial) dependiendo del estado, y reaccionar ante el texto ingresado por el usuario. 
 
-![Img-3](blob/main/docs/architecture.png)
+![Img-3](/docs/architecture.png)
 
 Adicionalmente, se añaden componentes adicionales que realizan la tarea de detección de la intención. 
 
@@ -79,19 +79,19 @@ La base de datos ha sido modelada utilizando Entity Framework Core, y se puede u
     ```
 
 5. Cargar la información. La aplicación no tiene una interfaz para cargar o modificar información a la base de datos, así que tendrás que cargarla manualmente. Sin embargo, puedes usar estos dos archivos CSV para importar los datos y tener un punto de partida. 
-    - [IntentData.csv](blob/main/data/IntentData.csv)
-    - [UtteranceData.csv](blob/main/data/UtteranceData.csv)
+    - [IntentData.csv](/data/IntentData.csv)
+    - [UtteranceData.csv](/data/UtteranceData.csv)
 
 ## Despliegue
 
 La aplicación se puede ejecutar directamente desde el Bot Framework Emulator. Una vez instalada (ver enlaces importantes), abre la aplicación y haz clic en "Open bot". Tras lo cual, aparecerá una ventana de diálogo que te solicitará inforamción. Para probar en tu ambiente local, solo necesitas la URL de tu localhost: 
 
-![](blob/main/docs/bot_connect.png)
+![](/docs/bot_connect.png)
 
 Para publicar el bot hacia un ambiente Microsoft Azure, consulta los siguientes documentos:
 
-* [Despliegue hacia un grupo de recursos nuevo](IntentBot/DeploymentTemplates/DeployWithNewResourceGroup/readme.md)
-* [Despliegue hacia un grupo de recursos existente](IntentBot/DeploymentTemplates/DeployUseExistResourceGroup/readme.md)
+* [Despliegue hacia un grupo de recursos nuevo](/IntentBot/DeploymentTemplates/DeployWithNewResourceGroup/readme.md)
+* [Despliegue hacia un grupo de recursos existente](/IntentBot/DeploymentTemplates/DeployUseExistResourceGroup/readme.md)
 
 ## Enlaces importantes
 
