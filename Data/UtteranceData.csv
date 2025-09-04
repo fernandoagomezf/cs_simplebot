@@ -1,0 +1,201 @@
+﻿Id,Text,Culture,Tag
+8de0db9d-5757-4fcf-b7b2-0070ac1204c9,¿Dónde están los cursos disponibles?,es-MX,prc_hr_training
+9f348f87-8ad4-4e82-a896-0168ea8fb80a,¿Dónde solicito permiso por paternidad?,es-MX,qry_hr_maternityleave
+4ee0e685-b0a0-4f3e-a761-02b011f56cb5,¿Dónde se registra un incidente?,es-MX,prc_hr_incident
+485cb3a7-7d84-4b3b-a1d1-042a34df92f6,¿Hay un formulario para reportar incidentes?,es-MX,prc_hr_incident
+f9fb8d55-e93e-416c-89e3-043e5cee71ab,"Quiero mejorar mis habilidades, ¿hay capacitaciones?",es-MX,prc_hr_training
+8ecc7e08-6ed4-49c6-ad95-05c79845091f,¿Puedo ver mi calificación de desempeño?,es-MX,qry_hr_perfeval
+c6c8d361-ad2c-4ad0-b880-05eaf2016fb1,¿Dónde puedo subir mis facturas para el reembolso?,es-MX,prc_hr_expenserefund
+9756366f-6bb2-4c8b-bcba-0636285cc512,¿La empresa ofrece fondo de ahorro?,es-MX,qry_hr_benefits
+4b633a71-a18b-42b9-8fa8-08cc06ea8aae,¿Puedo pedir trabajar en otro turno?,es-MX,prc_hr_workshift
+9cefe331-0249-4477-88db-0b0138ef9a46,Quiero reportar una ausencia por enfermedad,es-MX,prc_hr_sickday
+c290a79c-df8b-4896-961d-0bbf9453b6b7,¿Me puedes ayudar a entender mi evaluación?,es-MX,qry_hr_perfeval
+c3311b18-c070-4b36-b17c-11a8943a190e,¿Hay formulario para pedir cambio de jornada?,es-MX,prc_hr_workshift
+0ef074e1-6bba-4e91-b677-123ff3082c8f,"Hola, quiero saber si hay política de horarios flexibles",es-MX,qry_hr_policies
+cd92668e-923e-4b91-a373-127438dec63f,¿La empresa da bonos?,es-MX,qry_hr_benefits
+b04d0311-cad0-49dd-808b-12cbc445006e,"Estoy enfermo, ¿cómo lo reporto oficialmente?",es-MX,prc_hr_sickday
+2fcf379e-a97c-4247-a8ce-131797ba370a,Quiero saber cómo pedir licencia de maternidad,es-MX,qry_hr_maternityleave
+93f47020-fc7d-4bf4-9f27-14249eac784c,qué hay que hacer en caso de terremoto,es-MX,qry_hr_policies
+85f9b72c-9c0b-4c31-8795-1447954f8861,como le hago con algunos días de descanso,es-MX,prc_hr_holiday
+20f3f4fe-51bf-478d-88bd-14b5fbbdbd7e,¿Hay alguna política sobre trabajo remoto?,es-MX,qry_hr_policies
+fe9e21c1-0528-4f55-a5cc-17a1ecf6bbfa,Quiero modificar mi horario actual,es-MX,prc_hr_workshift
+df81a674-b3fa-4c1e-9fdc-19048d918c1c,Quiero pedir vacaciones para diciembre,es-MX,prc_hr_holiday
+fc33a430-d9f6-48a5-9b24-1907eb71ec8a,¿Dónde informo sobre un conflicto laboral?,es-MX,prc_hr_incident
+e572c694-0ff7-44e2-a1f8-190af89b035e,¿Dónde están las políticas de seguridad?,es-MX,qry_hr_policies
+508cbe3b-2b80-4328-bd88-19f7b1203dba,Quiero pasar al turno de la mañana,es-MX,prc_hr_workshift
+541f4d8d-889d-448e-82e7-1af0ae2aefb6,¿Dónde consulto mis beneficios laborales?,es-MX,qry_hr_benefits
+a20db780-d708-4212-b365-1d2c5a69f574,¿Dónde se solicita equipo de trabajo?,es-MX,prc_hr_equipment
+8bb6f273-d7c5-44a3-b47b-1dd8551b4da6,Quiero revisar las políticas internas,es-MX,qry_hr_policies
+ccd0d67e-1b87-4fc9-82ec-1defc0f7badf,Quiero consultar mi pago de este mes,es-MX,qry_hr_payroll
+a12fe9b1-071c-430e-90cd-204ebb4399de,Necesito revisar mi nómina de agosto,es-MX,qry_hr_payroll
+6f3528a1-75e1-4709-a972-220357ba6914,¿Dónde informo que necesito nuevo equipo?,es-MX,prc_hr_equipment
+ced06b7c-2ea8-48ab-bcaf-22d742ce6044,¿Hay comentarios sobre mi desempeño?,es-MX,qry_hr_perfeval
+9b698d0a-b831-4823-b7bd-25764dc94995,¿Puedo registrar que estoy enfermo?,es-MX,prc_hr_sickday
+8d0fb29d-8e06-4798-8073-276b8b778b1f,¿Dónde descargo mi comprobante de pago?,es-MX,qry_hr_payroll
+0504df45-a0fa-45bd-9afb-29506153e901,Quiero pedir una laptop para trabajar,es-MX,prc_hr_equipment
+2bcb8b02-2463-4d7c-b9fc-29fa6d46f188,¿Me puedes mostrar los pasos para pedir licencia?,es-MX,qry_hr_maternityleave
+b0437ff6-5dfa-4170-bac1-2a2045faae98,¿Dónde consulto el reglamento interno?,es-MX,qry_hr_policies
+8eaf4ddd-0311-4e8c-b07d-2a65b989f917,¿Puedo ver las políticas sobre ausencias?,es-MX,qry_hr_policies
+58712232-03a3-436c-8f73-2ac55595214f,¿A quién le mando las facturas para que me reembolsen?,es-MX,prc_hr_expenserefund
+b8ea2af6-712a-465f-b109-2aee7e8b89e4,Necesito registrar un incidente urgente,es-MX,prc_hr_incident
+5b52df82-3a02-490f-b3a5-2b596bcf4f7f,¿Me puedes ayudar a iniciar una solicitud de aumento?,es-MX,prc_hr_payraise
+6669c755-2b8d-435e-810f-2b76f79ee5df,¿Puedo pedir tiempo por nacimiento de mi hijo?,es-MX,qry_hr_maternityleave
+128f3d8f-af8d-4815-83db-2d4ce7fc2443,¿La empresa ofrece cursos de actualización?,es-MX,prc_hr_training
+3e78ec60-ca27-4fb0-9a23-2daabdfdccee,Quiero notificar que estoy en reposo médico,es-MX,prc_hr_sickday
+393d8aa2-c906-49cf-9b4d-2e25a1de9411,¿Dónde se registra una ausencia por salud?,es-MX,prc_hr_sickday
+1ff2bf1b-2766-4196-9002-2e27663c9d46,Quiero consultar la política de vacaciones,es-MX,qry_hr_policies
+1fbd30ff-38f8-494f-8f2b-2e78ac4778ca,Quiero tomar un curso de desarrollo profesional,es-MX,prc_hr_training
+fcf69ff3-bfb1-46ed-b920-2ec2902f903d,Quiero discutir mi salario con recursos humanos,es-MX,prc_hr_payraise
+348b7d9a-57fa-4c6c-b118-2ee81f46d736,Necesito cambiar mi horario por temas familiares,es-MX,prc_hr_workshift
+eb6e9166-4177-43fb-bfcc-2f78dc7ee684,¿Hay retroalimentación disponible?,es-MX,qry_hr_perfeval
+e6a61227-7445-45f6-922a-2f90e276169e,¿Me puedes ayudar a registrar mi enfermedad?,es-MX,prc_hr_sickday
+4093d1b6-ead9-4dfb-9bdd-2f96dfdd4c45,"Tengo facturas de hotel y comida, ¿cómo las envío?",es-MX,prc_hr_expenserefund
+2285864f-b52a-4d77-8abd-3076fbb2d819,¿Puedo tomar días por nacimiento?,es-MX,qry_hr_maternityleave
+11c35325-713a-441b-8722-310b299f0fc4,"Voy a salir de vacaciones, ¿qué tengo que hacer?",es-MX,prc_hr_holiday
+a3c27a37-c77e-406d-b0c5-3140dca7ee42,¿Hay beneficios adicionales por antigüedad?,es-MX,qry_hr_benefits
+45c438e4-6dd5-4ead-9d3c-31cf5bbed029,¿Dónde informo que tendré un bebé?,es-MX,qry_hr_maternityleave
+9c4d7f57-2727-4581-91a2-33275f767fda,¿Dónde solicito revisión salarial?,es-MX,prc_hr_payraise
+d2f3bf4f-a861-4adc-aa50-34728c5a6bc6,¿Dónde se hace la solicitud de mobiliario?,es-MX,prc_hr_equipment
+5543d8c8-ad3f-4b2a-b3a6-37196815bdb6,¿Hay un formulario digital para pedir el reembolso?,es-MX,prc_hr_expenserefund
+52ef5b0e-f737-4910-86e1-3737b58f3525,¿La empresa tiene política de maternidad?,es-MX,qry_hr_policies
+3349ec4c-96fc-4fa9-b5de-373b65c66781,¿Me puedes explicar el proceso de licencia parental?,es-MX,qry_hr_maternityleave
+eb00b5ec-6e3c-4405-a3c5-37b27a05403c,¿sabes cómo se hacen los pagos?,es-MX,qry_hr_payroll
+d63e9654-d0c0-4570-928c-38b3c7d5b9f8,Quiero reportar un incidente en la oficina,es-MX,prc_hr_incident
+4cbfc1b1-7deb-462e-8d36-38c4bd74751d,¿Dónde se reportan los incidentes internos?,es-MX,prc_hr_incident
+72dde74f-7e91-4511-9bed-395e448a9a38,Voy a solicitar vacaciones por Año Nuevo,es-MX,prc_hr_holiday
+207ef6e8-6ce4-40e3-9c59-39aa9d340745,¿Dónde solicito entrenamiento?,es-MX,prc_hr_training
+3060b399-f73a-4452-b67c-3a067d4e6d3d,Necesito hacer el reembolso de unos gastos que ya pagué,es-MX,prc_hr_expenserefund
+34682267-960e-42ca-b264-3adc60236934,Quiero solicitar el reembolso de unos gastos,es-MX,prc_hr_expenserefund
+68295a93-51b8-4e03-84f2-3b8c7ae07dd0,¿Dónde consulto mi evaluación de desempeño?,es-MX,qry_hr_perfeval
+796d2327-eca6-46a8-880b-3bfb01e0d74e,¿Dónde están las reglas internas?,es-MX,qry_hr_policies
+979df0f4-fea8-41e5-98f8-3c1c4ce503c8,¿Hay protocolo para reportar incidentes?,es-MX,prc_hr_incident
+b5b7893d-3d37-4b5c-9d2e-3e085bcc93e1,Voy a pedir el reembolso de unos gastos de viaje,es-MX,prc_hr_expenserefund
+042cf22b-8530-4b93-8bf8-3e562373d525,¿Hay resultados de mi evaluación?,es-MX,qry_hr_perfeval
+f6bb0ef9-50b8-4976-9c59-3f970305ae5a,Me gustaría tomar vacaciones del 20 al 30 de diciembre,es-MX,prc_hr_holiday
+b78472e2-1f2a-45c7-a0b4-414c141f56d7,¿Me puedes ayudar con la licencia por nacimiento?,es-MX,qry_hr_maternityleave
+0cfc7684-0916-4adb-89c2-41a3d8026923,¿Hay formulario para pedir equipo?,es-MX,prc_hr_equipment
+f3fc9d98-f5fa-47ba-a005-42e79210aa92,"Estoy con fiebre, ¿cómo lo notifico?",es-MX,prc_hr_sickday
+5b70a7b1-7fd6-4886-a48e-4370eae1d476,¿Dónde puedo pedir vacaciones para Navidad?,es-MX,prc_hr_holiday
+cf2882a7-89f5-4936-98ce-43cdb5c02ba2,¿Hay licencia por cuidados del recién nacido?,es-MX,qry_hr_maternityleave
+da00335e-6776-4031-8385-44ce1a14edbf,Necesito reportar que no podré ir hoy por enfermedad,es-MX,prc_hr_sickday
+92a649a8-4e60-41bb-89ff-4520ab11d000,¿Me puedes orientar sobre cómo pedir un aumento?,es-MX,prc_hr_payraise
+74bdbfde-a14e-4200-9a0f-4810e10ae4e7,¿Hay forma de ver mi nómina desde aquí?,es-MX,qry_hr_payroll
+fe39e7e2-1ad9-4004-a175-49005b866f5e,¿A quién debo contactar para solicitar mis días libres?,es-MX,prc_hr_holiday
+cf8a9470-83f7-46c4-bb9e-49147d7e0490,Quiero participar en una sesión de formación,es-MX,prc_hr_training
+4642c1b9-80c7-4d7e-a493-496076c01084,¿Hay algún formulario para pedir vacaciones?,es-MX,prc_hr_holiday
+6316037b-ee4a-4624-ae36-4a59f7583648,¿Tengo seguro médico?,es-MX,qry_hr_benefits
+c148f127-43ec-41ef-aa0c-4af68273bc4d,¿Hay proceso para pedir equipo técnico?,es-MX,prc_hr_equipment
+1892905e-106c-413c-bfa3-4ba60fa09d4d,"Ocurrió un accidente, ¿qué debo hacer?",es-MX,prc_hr_incident
+a7cf356d-3e68-4876-8382-4c65c3cec340,"Tengo los comprobantes listos, ¿cómo los adjunto?",es-MX,prc_hr_expenserefund
+c2359b9f-7562-4efb-b089-4c72f977535f,¿Dónde están los resultados de mi revisión?,es-MX,qry_hr_perfeval
+e2c5d55c-bbed-4eda-b567-4d23e58b90f4,¿Me puedes explicar las políticas de capacitación?,es-MX,qry_hr_policies
+90ae4951-8cc1-4987-99c0-4d47e50b246d,Quiero levantar un reporte por un incidente,es-MX,prc_hr_incident
+1cfe6e5e-9c72-4d40-aaac-4e6581e20d59,¿Me puedes mostrar el proceso para pedir aumento?,es-MX,prc_hr_payraise
+bc318924-e253-48e4-9c5e-4f89b55600be,¿Me puedes indicar cómo pedir cambio de horario?,es-MX,prc_hr_workshift
+785c032c-02d8-41af-9eb1-5012f6d0d768,¿Hay forma de pedir aumento este trimestre?,es-MX,prc_hr_payraise
+b763b139-20db-4980-b0da-5025cb610e88,Quiero pedir tiempo libre para la próxima semana,es-MX,prc_hr_holiday
+e650f7d0-72cc-4258-8283-520a0bec75cc,Quiero solicitar material para mi área,es-MX,prc_hr_equipment
+0f2700a3-b9a4-4aab-9d6d-525f6fd51bbb,¿Me puedes ayudar a gestionar una solicitud de equipo?,es-MX,prc_hr_equipment
+b4dc0688-6365-42af-b488-52cefc78f1ea,¿Puedo pedir entrenamiento en liderazgo?,es-MX,prc_hr_training
+1605ebbc-cfaa-4ba8-844c-54ee81613e3c,Quiero ajustar mi jornada laboral,es-MX,prc_hr_workshift
+88a6e7f4-ccb7-462e-818e-55d4ad34c152,Necesito subir unos tickets para que me los reembolsen,es-MX,prc_hr_expenserefund
+1e9c7c06-6171-47f1-a3a3-562030c939e2,Necesito iniciar el trámite para tomar vacaciones,es-MX,prc_hr_holiday
+53468709-8b1b-4ed5-9d1f-56b49bd7e095,como le hago para requerir vacaciones,es-MX,prc_hr_holiday
+bd6e8bf2-c1a6-4389-b6ff-57ba68d1da0c,Necesito iniciar el trámite de reembolso,es-MX,prc_hr_expenserefund
+0e6cbc86-9839-49ba-832a-5a2787cfe8a1,¿Dónde están las normas de comportamiento?,es-MX,qry_hr_policies
+62040f2b-b5bf-40a6-893c-5abac7ab324f,¿Puedo consultar las políticas desde aquí?,es-MX,qry_hr_policies
+78d83757-ccf6-407d-a9b8-5bb5322c6f2e,¿Dónde solicito un curso de formación?,es-MX,prc_hr_training
+281f7548-f37d-4404-940c-63422ef27af2,¿Hay capacitaciones para mi área?,es-MX,prc_hr_training
+52a0a2a2-30c4-4cd2-82c8-63df97595ace,¿Hay beneficios por paternidad?,es-MX,qry_hr_maternityleave
+20a6b114-02b6-4835-b5e8-64206c6e78b2,¿Puedo ver cómo fui evaluado?,es-MX,qry_hr_perfeval
+b0a25ba6-1869-4a37-ade1-642e0c58e788,¿Puedo pedir audífonos para videollamadas?,es-MX,prc_hr_equipment
+61a9e781-e735-48e0-ab44-662b937b7462,"Hola, ocurrió algo en el área de trabajo",es-MX,prc_hr_incident
+726929c4-a825-448c-a4fe-67bae4e73587,¿Me ayudas a iniciar el trámite de reembolso?,es-MX,prc_hr_expenserefund
+046b9982-e791-4f54-936d-6982f8f9efe7,¿Me puedes ayudar a gestionar mi permiso?,es-MX,qry_hr_maternityleave
+d2475304-a672-4095-b5b6-69ce00aaebe2,Quiero iniciar el proceso de permiso por nacimiento,es-MX,qry_hr_maternityleave
+053c8741-07b3-46fa-ba39-6cd7e24e6acd,¿Se puede hacer el reembolso desde aquí?,es-MX,prc_hr_expenserefund
+83edf349-530e-4d31-a5d0-7002a5ea11e0,¿Puedo ver cuánto me descontaron este mes?,es-MX,qry_hr_payroll
+d4e7b051-fe66-4f47-9984-7025a67ea103,¿Dónde se solicita la licencia por maternidad?,es-MX,qry_hr_maternityleave
+e226c0b4-9eb0-49f4-9330-702d467407b1,Quiero pedir una tablet para capacitaciones,es-MX,prc_hr_equipment
+a0ff1c46-b2f8-4b10-a64d-70761ae9fc45,Estoy interesado en pedir un ajuste salarial,es-MX,prc_hr_payraise
+a3960adf-b08b-4752-8e90-7280b152be05,¿Puedo pedir permiso por adopción?,es-MX,qry_hr_maternityleave
+229c3c92-1f44-451f-a582-728fe07fbccb,"Hola, quiero solicitar el reembolso de unos gastos personales",es-MX,prc_hr_expenserefund
+cb6c042c-e1ad-4697-ac21-72f98dceb067,¿Hay política sobre maternidad?,es-MX,qry_hr_maternityleave
+76229a54-47c3-484a-9cd7-73821715c016,¿Me puedes ayudar a reportar que estoy enfermo?,es-MX,prc_hr_sickday
+4ad331fb-1cf4-4a00-bd78-7472c02083ab,"Hola, quiero tomarme unos días en enero, ¿cómo lo hago?",es-MX,prc_hr_holiday
+aeb93806-0ba3-42ec-9ae5-75d7445a0a98,Quisiera saber si puedo pedir aumento,es-MX,prc_hr_payraise
+048a071f-b467-4e18-90f5-76662c400be3,¿Puedo subir mi justificante médico?,es-MX,prc_hr_sickday
+8e187a88-eee7-4a26-b313-76e07fe81369,¿Dónde consulto mis metas cumplidas?,es-MX,qry_hr_perfeval
+099d0a83-7288-47f5-88d3-77070b20dad6,"Necesito una silla ergonómica, ¿cómo la pido?",es-MX,prc_hr_equipment
+c27cfbc8-0941-40c8-a48b-77dec847571b,¿Se puede pedir vacaciones desde esta plataforma?,es-MX,prc_hr_holiday
+fb6dca69-c7ae-4911-a8ad-7947f4cdfb50,"Hola, quiero ver mi recibo de nómina",es-MX,qry_hr_payroll
+e2f9edf7-731b-4f82-8d45-794aba095b4d,"Quiero aprender algo nuevo, ¿hay cursos?",es-MX,prc_hr_training
+08b3e5dd-2689-44f6-a5bc-7c3b5940c3e2,¿Me puedes ayudar con el trámite de licencia?,es-MX,qry_hr_maternityleave
+27478806-24e3-44de-8032-7c7647d5e844,¿Dónde puedo ver las políticas de la empresa?,es-MX,qry_hr_policies
+cd4d5d01-d1a9-42f1-88b5-7ce8d6e5f37e,"Quisiera ausentarme unos días por las fiestas, ¿cómo lo gestiono?",es-MX,prc_hr_holiday
+fc59f19a-8632-42fe-9c9b-7f3a083901bd,¿Dónde informo que quiero discutir mi salario?,es-MX,prc_hr_payraise
+68c4ace7-0d6c-43f4-93e9-7f63c3a86729,Necesito revisar mi nómina pasada,es-MX,qry_hr_payroll
+3b04f0d0-4fcb-4c60-a904-7fde492413ce,¿Dónde registro una solicitud de cambio de horario?,es-MX,prc_hr_workshift
+8a40ceb0-915f-4a41-9d9f-804d44c922df,"Hola, quiero revisar mi desempeño",es-MX,qry_hr_perfeval
+bc6156fd-cac6-4b44-a09c-824e871a7910,¿Puedo pedir aumento por desempeño?,es-MX,prc_hr_payraise
+16760665-38e3-4dde-a592-8274488b21e0,¿Hay algún documento con mis prestaciones?,es-MX,qry_hr_benefits
+081d8443-2036-4298-87fb-83557e618f2b,Qué pex con mis vacaciones,es-MX,prc_hr_holiday
+51f5a953-0105-404e-bfef-83af16429ac5,¿Puedo registrarme a una formación interna?,es-MX,prc_hr_training
+7d3e6edc-a03d-4bfe-98cc-84e06aa2f3e2,¿Dónde reviso mi desempeño profesional?,es-MX,qry_hr_perfeval
+1f3b7af7-6d10-4f78-99b9-85246be64cc2,"Hola, voy a ser papá, ¿cómo lo notifico?",es-MX,qry_hr_maternityleave
+8b7432a7-55b5-4d05-9c7f-85357b7b0521,cómo me debo comportar durante un evento de la empresa,es-MX,qry_hr_policies
+11d30840-1fa4-42dc-8aa5-87ab441a5cdc,¿Puedo reportar una situación de riesgo?,es-MX,prc_hr_incident
+edb2fbfa-fe9e-492b-b732-8866b75ced7a,¿Me puedes ayudar a solicitar una capacitación?,es-MX,prc_hr_training
+a3ecd44d-708c-4015-8ba2-88a845d91590,"Hola, quiero hablar sobre mi salario",es-MX,prc_hr_payraise
+a85f2a68-e3d1-4e3c-adb6-8b430759c01c,¿Hay política para solicitar aumento?,es-MX,prc_hr_payraise
+2cb7e608-9550-4150-afe9-8b977d56fc53,Necesito saber cuántos días de vacaciones tengo disponibles,es-MX,prc_hr_holiday
+67cbcc54-39bf-40a0-b51e-8bccdd9f303d,¿Dónde consulto los días disponibles por maternidad?,es-MX,qry_hr_maternityleave
+36dd8207-77e5-4bd4-a880-8bdbcab7eee3,¿Dónde solicito modificar mi turno?,es-MX,prc_hr_workshift
+1846b644-e745-4d8a-9c5a-8d7be73eac5d,Quiero saber cuánto me depositaron,es-MX,qry_hr_payroll
+4b48d9cc-0f64-4289-9368-8db48bcef137,¿Me puedes ayudar a solicitar equipo de oficina?,es-MX,prc_hr_equipment
+2d863d01-d9dd-435f-805e-8f4235c9984c,¿Me puedes enviar mi recibo de nómina?,es-MX,qry_hr_payroll
+c6071df9-6fa6-4e42-8cb4-8fe21197cf14,tengo dudas sobre la forma en la que hacen los pagos,es-MX,qry_hr_payroll
+26dc3c45-6a32-444d-915f-917538de8296,¿Dónde se hace la solicitud de cambio de horario?,es-MX,prc_hr_workshift
+ab61bc56-ae09-40fc-8331-917a313eac94,Quiero saber si cumplí mis objetivos,es-MX,qry_hr_perfeval
+d4092a9f-ae97-467c-8919-91f7b3550f90,¿Dónde informo que estoy incapacitado?,es-MX,prc_hr_sickday
+3529f828-2ada-47ae-b5f9-92c439384383,"Hola, quiero ajustar mi horario de entrada",es-MX,prc_hr_workshift
+f7719990-5b18-40ed-9110-931e9f39326d,¿Me puedes mostrar mi progreso laboral?,es-MX,qry_hr_perfeval
+b7015477-eefc-403e-8b9a-93b8c30be08c,¿Me puedes explicar la política de reembolsos?,es-MX,qry_hr_policies
+ce54cd21-79f5-4f23-aa92-9485c4a82c33,Necesito ausentarme por motivos médicos,es-MX,prc_hr_sickday
+967b8b0c-d2a5-4920-a7a9-9540720a8396,¿Me puedes mostrar mi retroalimentación anual?,es-MX,qry_hr_perfeval
+4f967dfd-d80c-4e31-8966-965a343a35b1,¿Hay política sobre aumento salarial?,es-MX,qry_hr_policies
+4fa2aa04-9050-41c2-97d7-978f3709e077,¿Hay alguna política sobre uso de equipo?,es-MX,qry_hr_policies
+4e68bb17-b840-4d5b-8186-97f854e3a3f2,¿Dónde me inscribo para capacitarme?,es-MX,prc_hr_training
+e4c61d4d-9dad-4795-84ed-9939b5a5e91f,¿Me puedes ayudar a pedir el reembolso de viáticos?,es-MX,prc_hr_expenserefund
+4f4ea580-3b8e-43e9-ac9b-996e2f15adcf,¿Puedo pedir capacitación en línea?,es-MX,prc_hr_training
+56b3cdba-488f-4893-9488-99eb39acf2c9,"Necesito renovar mi equipo, ¿cómo lo hago?",es-MX,prc_hr_equipment
+7402b7eb-cb8c-4649-a66c-9a2fe827c15e,¿Dónde se consulta la nómina?,es-MX,qry_hr_payroll
+c08c076a-42a1-454b-9b84-9a7120f2062b,¿Tengo seguro de vida?,es-MX,qry_hr_benefits
+acd03f69-a77b-4f78-9fdb-9b08d61c57a2,"No voy a poder trabajar hoy, estoy enfermo",es-MX,prc_hr_sickday
+81ef8e89-404c-40fa-a44c-9b54294f60cc,¿Me puedes mostrar las opciones de capacitación?,es-MX,prc_hr_training
+43f437fa-9085-41ff-9a41-9ccb8433954f,Quiero reportar una situación irregular,es-MX,prc_hr_incident
+aac0f422-179b-422a-bdd9-9ce9ec4de4f8,Quiero revisar si me pagaron correctamente,es-MX,qry_hr_payroll
+a106e73d-e4b1-44fa-9563-9d12efe341f1,¿Dónde informo que necesito cambiar mi horario?,es-MX,prc_hr_workshift
+963f151a-2768-4c0f-9c5a-9da3d9ae240c,¿Ya se depositó la nómina?,es-MX,qry_hr_payroll
+aa68f102-21e1-4319-ba41-9e5fad4d1cca,Quiero pedir un aumento de sueldo,es-MX,prc_hr_payraise
+9a1280bc-8a32-417e-84d9-9e8fc2b2b2e8,Quiero saber si ya me pagaron,es-MX,qry_hr_payroll
+3c2572f8-55ed-487e-af02-9ecf2147317a,¿Dónde se solicita cambio de jornada?,es-MX,prc_hr_workshift
+b93983b8-3df7-49b1-8e4f-9efa7908a43b,¿Dónde informo que necesito licencia por maternidad?,es-MX,qry_hr_maternityleave
+4c0eb705-fd19-40ca-8a65-9faa7e65567e,¿Dónde se registra una petición de ajuste salarial?,es-MX,prc_hr_payraise
+9bd8f807-1852-44f0-94cf-a03b175e601f,¿Hay política sobre evaluaciones de desempeño?,es-MX,qry_hr_policies
+d1a16f85-91f3-47c9-afbc-a03b7b34ff6e,"Estoy planeando mis vacaciones, ¿cómo las solicito?",es-MX,prc_hr_holiday
+f0ae4b9f-7c5a-4f82-b421-a0a92f59f6cd,¿Puedo ver mis beneficios desde aquí?,es-MX,qry_hr_benefits
+6a42b45f-719c-4541-91ba-a54127b4a0d3,¿Dónde encuentro las políticas de recursos humanos?,es-MX,qry_hr_policies
+c5c3206c-af09-49e5-80dd-a5afea2b1969,¿Puedo registrar una incapacidad médica?,es-MX,prc_hr_sickday
+8495a0d2-fa83-454e-b2e7-a6e3d162e0d3,¿Dónde consulto los beneficios que tengo?,es-MX,qry_hr_benefits
+dfaaf96b-2498-45bb-b3c9-a93dba5f787c,¿Dónde informo sobre un problema en el área?,es-MX,prc_hr_incident
+6d961cc3-b691-44af-b100-a9e82a43a6eb,¿Me puedes ayudar a levantar un acta?,es-MX,prc_hr_incident
+c39a40ec-3436-4be2-b8a5-aa987ef73adf,"Quiero trabajar en otro horario, ¿cómo lo pido?",es-MX,prc_hr_workshift
+d692c24e-7e19-4fa4-aa3e-ac61249095bf,¿Tengo acceso a comedor subsidiado?,es-MX,qry_hr_benefits
+09158881-e266-496d-b715-ac7738a23b63,Quiero pedir un cambio de horario,es-MX,prc_hr_workshift
+db2c044a-e94a-43c4-b6d8-acb881de582f,¿Dónde aviso que estoy enfermo?,es-MX,prc_hr_sickday
+fd6b7d25-b281-4564-b097-ad93611e71f4,¿Puedo ver mi evaluación pasada?,es-MX,qry_hr_perfeval
+6b1cb5a6-4905-4725-9dfb-aebc5727733d,¿Hay algún formato que tenga que llenar para el reembolso?,es-MX,prc_hr_expenserefund
+f03723e1-d62d-459a-a661-afbd6500f00b,¿Puedes iniciar el proceso de reembolso por mí?,es-MX,prc_hr_expenserefund
+f39fd1fa-3370-45b9-a7e6-b0140d7da7e8,¿Me puedes orientar sobre cómo pedir otro turno?,es-MX,prc_hr_workshift
+1aacd8df-ef50-4518-a45d-b201b7319735,Quiero reportar que tengo síntomas,es-MX,prc_hr_sickday

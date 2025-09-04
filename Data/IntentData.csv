@@ -1,0 +1,14 @@
+﻿Id,Code,Name,Description,Culture
+19443acb-6d45-4bc5-80b8-09477d1d00dc,qry_hr_payroll,Consulta de nómina,"Empleado tiene preguntas sobre salario, deducciones o problemas de pago",es-MX
+a0002769-e9ad-421b-a267-142ee8b9efb1,prc_hr_expenserefund,Reembolso de gastos,Empleado quiere enviar o consultar sobre reportes de gastos,es-MX
+e46282d9-8986-4899-801c-18ac50cc579d,prc_hr_sickday,Reportar enfermedad,Empleado necesita reportar enfermedad y solicitar días por enfermedad,es-MX
+4b5ab23a-1065-4cde-b7bb-27de66702f28,prc_hr_holiday,Solicitar vacaciones,Empleado quiere solicitar días de vacaciones o tiempo libre,es-MX
+71f1e5ba-5a71-455e-8f55-2a3cd15f706c,qry_hr_benefits,Información de beneficios,"Empleado quiere información sobre seguro médico, retiro u otros beneficios",es-MX
+18dd9638-ce58-4646-a8b1-380cd1953729,prc_hr_training,Solicitar capacitación,Empleado quiere solicitar desarrollo profesional o oportunidades de capacitación,es-MX
+46bbaf83-21b9-47b0-bc65-4311e5be83de,qry_hr_policies,Consulta de políticas,Empleado tiene preguntas sobre políticas o procedimientos de la empresa,es-MX
+eb45e3d3-7669-43fb-97ad-5bb0299aac57,prc_hr_incident,Reportar incidente,Empleado necesita reportar comportamiento inapropiado o incidente laboral,es-MX
+27f481d7-5c30-4596-9b55-6591ed0ad12e,prc_hr_equipment,Solicitar equipo,Empleado necesita solicitar equipo o herramientas de trabajo,es-MX
+8b96d372-6ca8-4494-a9b4-99a6f960755c,qry_hr_perfeval,Evaluación de desempeño,Empleado tiene preguntas sobre evaluaciones de desempeño o feedback,es-MX
+f94dab38-84d6-4083-bdb2-9dafc34216de,qry_hr_maternityleave,Licencia de maternidad o paternidad,Empleado necesita información o quiere solicitar licencia parental,es-MX
+07b5b0bf-7bb7-4a26-a562-a39df6488968,prc_hr_payraise,Solicitar aumento salarial,Empleado quiere discutir o solicitar un aumento de sueldo,es-MX
+6ceea9bf-2261-40b2-a5f8-cfe3173b76c7,prc_hr_workshift,Solicitar cambio de horario,Empleado quiere discutir o cambiar horario de trabajo,es-MX
