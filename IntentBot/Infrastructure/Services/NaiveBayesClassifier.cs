@@ -32,6 +32,10 @@ public class NaiveBayesClassifier
             throw new ArgumentException("The text to analyze cannot be empty.");
         }
 
+        // esto se añade para poder soportar múltiples culturas. idealmente,
+        // el bot podría detectar si el lenguaje es inglés o español o algún
+        // otro idioma. dejamos listo esto, pero no está implementado más
+        // que para el español.
         var start = DateTime.Now;
         var culture = Culture.Name;
         if (!_classifiers.ContainsKey(culture)) {

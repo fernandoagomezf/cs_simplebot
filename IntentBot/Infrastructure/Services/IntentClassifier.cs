@@ -28,10 +28,11 @@ public class IntentClassifier {
     }
 
     public void Train(IEnumerable<Utterance> training) {
+        // conteo de palabras para generar distribución de probabilidad entre la frecuencia de la palabra y el total de palabras. 
         foreach (var item in training) {
             if (_trainingTexts.TryGetValue(item.Tag, out var texts)) {
                 texts.Add(item.Text);
-                var preprocText = _preprocessor.Preprocess(item.Text);
+                var preprocText = _preprocessor.Preprocess(item.Text);  // remover palabras vacías (stop words).
                 var words = _preprocessor.Tokenize(preprocText);
                 foreach (var word in words) {
                     if (!_wordFrequencies[item.Tag].TryGetValue(word, out var count)) {
@@ -49,18 +50,21 @@ public class IntentClassifier {
         var words = _preprocessor.Tokenize(preprocText);
         var scores = new Dictionary<string, double>();
 
+        // se cuentan las palabras y se genera una razón (ratio) entre palabras contadas y el total
+        // de palabras para obtener una probabilidad. se usa un logaritmo porque esta razón puede ser
+        // muy pequeña y puede provocar problemas de precisión (límite intrínseco de los tipos de dato 
+        // de punto flotante: float y double)
         foreach (var intentCode in _intents.Keys) {
             var intentCodeCount = (double)_trainingTexts[intentCode].Count;
             var trainingTextSum = (double)_trainingTexts.Values.Sum(t => t.Count);
             var ratio = intentCodeCount / trainingTextSum;
-            var intentProbability = Math.Log(ratio);
+            var intentProbability = Math.Log(ratio);    // va a ser un valor negativo porque la probabilidad es entre 0 y 1
 
             var wordProbability = 0.0;
             foreach (var word in words) {
                 var wordCount = _wordFrequencies[intentCode].TryGetValue(word, out var count) ? count : 0;
                 var totalWords = _intentWordCounts[intentCode];
 
-                // Laplace smoothing to avoid zero probabilities
                 var probability = (double)(wordCount + 1) / (totalWords + _wordFrequencies[intentCode].Count + 1);
                 wordProbability += Math.Log(probability);
             }
@@ -68,11 +72,11 @@ public class IntentClassifier {
             scores[intentCode] = intentProbability + wordProbability;
         }
 
-        // Convert to probabilities and normalize
+        // se genera el resultado asociando la probabilidad con cada intención
         var maxScore = scores.Values.Max();
         var expScores = scores.ToDictionary(
             kvp => kvp.Key,
-            kvp => Math.Exp(kvp.Value - maxScore) // Avoid underflow
+            kvp => Math.Exp(kvp.Value - maxScore) // exponenciamos para revertir el logaritmo
         );
 
         var sumExpScores = expScores.Values.Sum();

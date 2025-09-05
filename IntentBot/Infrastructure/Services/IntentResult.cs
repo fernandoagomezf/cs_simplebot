@@ -8,7 +8,7 @@ public record IntentResult(
     string IntentName,
     double Confidence
 ) {
-    public const double Threshold = 0.7;
+    public const double Threshold = 0.7; // 70% de probabilidad para arriba lo consideramos confidente.
     public bool IsConfident => Confidence >= Threshold;
     public string ConfidenceText => $"{Confidence:P1}";
 }

@@ -24,7 +24,7 @@ public class SimpleSpanishTextPreprocessor
         return text.ToLowerInvariant()
             .Split([' ', '.', ',', '!', '?', ';', ':', '"', '\'', '(', ')', '[', ']', '{', '}'],
                 StringSplitOptions.RemoveEmptyEntries)
-            .Where(word => word.Length > 2) // Ignore very short words
+            .Where(word => word.Length > 2) // ignorar palabras muy pequeñas
             .Distinct()
             .ToArray();
     }

@@ -93,6 +93,15 @@ Para publicar el bot hacia un ambiente Microsoft Azure, consulta los siguientes 
 * [Despliegue hacia un grupo de recursos nuevo](/IntentBot/DeploymentTemplates/DeployWithNewResourceGroup/readme.md)
 * [Despliegue hacia un grupo de recursos existente](/IntentBot/DeploymentTemplates/DeployUseExistResourceGroup/readme.md)
 
+## Puntos de mejora
+
+Este proyecto intenta mostrar como gestionar conversaciones y detectar intenciones de forma básica (clasificador bayesiano ingenuo). Sin embargo, aún hay espacio para la mejora. Algunas ideas para el futuro son:
+
+* Utilizar un clasificador diferente, posiblmente con la librería Microsoft ML.NET. 
+* Incluir detección de idioma y localizar al bot de acuerdo a la cultura detectada. 
+* El preprocesador detecta palabras vacías (_stop words_) en español de forma _hardcoded_. Quizás sería mejor trasladarlas a una tabla en la base de datos.
+* Añadir un _stemmatizer_ y un _lemmatizer_ para solo trabajar con las raíces de las palabras, pero hacerlo manualmente para español no es tarea fácil, de tal suerte que habría de implementarse con algún corpus grande.
+
 ## Enlaces importantes
 
 Estos son algunos enlaces importantes hacia herramientas y librerías. 
